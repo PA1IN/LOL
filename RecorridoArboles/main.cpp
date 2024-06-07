@@ -176,4 +176,6 @@ int main()
     cout<<""<<endl;
     cout<<"Post-Orden"<<endl;
     postOrdenIterativo(raiz);
+
+    return 0;
 }
