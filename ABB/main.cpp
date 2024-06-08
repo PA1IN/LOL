@@ -79,6 +79,35 @@ void eliminar(Nodo* &raiz, int datoAEliminar)
         return;
     }
 
+    if(datoAEliminar > raiz->dato)
+    {
+        eliminar(raiz->hijoDer, datoAEliminar);
+    }else if(datoAEliminar < raiz->dato)
+    {
+        eliminar(raiz->hijoIzq, datoAEliminar);
+    }else
+    {
+        if(raiz->hijoDer == nullptr)
+        {
+            Nodo* temp = raiz->hijoIzq;
+            delete raiz;
+            raiz = temp;
+        }
+        else if(raiz->hijoIzq == nullptr)
+        {
+            Nodo* temp = raiz->hijoDer;
+            delete raiz;
+            raiz = temp;
+        }
+        else
+        {
+            Nodo* temp = menorDeLosMayores(raiz->hijoDer);   
+            raiz->dato = temp->dato;
+            eliminar(raiz->hijoDer,temp->dato);
+        }
+    }
+}
+
     
 
 }
