@@ -108,9 +108,6 @@ void eliminar(Nodo* &raiz, int datoAEliminar)
     }
 }
 
-    
-
-}
 
 int main()
 {
